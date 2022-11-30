@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "hg-s3-frontend-bucket"
+  bucket = "nyc-covid-data-frontend-bucket"
 }
 
 resource "aws_s3_object" "file_upload" {
@@ -20,7 +20,7 @@ resource "aws_s3_bucket_acl" "example" {
 }
 
 resource "aws_iam_role" "role" {
-  name = "api-gateway-s3-role"
+  name = "nyc-covid-data-api-gateway-s3-role"
 
   assume_role_policy = <<EOF
 {
@@ -40,7 +40,7 @@ EOF
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "api-gateway-s3-policy"
+  name        = "nyc-covid-data-api-gateway-s3-policy"
   description = "A test policy"
 
   policy = <<EOF
@@ -74,7 +74,8 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 }
 
 resource "aws_api_gateway_rest_api" "frontend_api_gateway" {
-  name = "FrontendGateway"
+  name = "nyc-covid-data-frontend-gateway"
+  binary_media_types = [ "Content-Type", "Accept" ]
 }
 
 resource "aws_api_gateway_resource" "frontend_file_resource" {
@@ -118,6 +119,9 @@ resource "aws_api_gateway_method_response" "frontend_file_method_response" {
   response_parameters = { 
     "method.response.header.Content-Type" = true 
     "method.response.header.Content-Length" = true 
+  }
+  response_models = {
+    "application/json" = "Empty"
   }
 }
 
@@ -169,6 +173,9 @@ resource "aws_api_gateway_method_response" "index_file_method_response" {
   response_parameters = { 
     "method.response.header.Content-Type" = true 
     "method.response.header.Content-Length" = true 
+  }
+  response_models = {
+    "application/json" = "Empty"
   }
 }
 
