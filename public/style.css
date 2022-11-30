@@ -1,0 +1,137 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.centered {
+  align-content: center;
+}
+
+.centered-items {
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.full {
+  width: 100%;
+}
+
+.three-fourths {
+  width: 75%;
+}
+
+.two-thirds {
+  width: 60%;
+}
+
+.half {
+  width: 50%;
+}
+
+.fourty-five {
+  width: 45%;
+}
+
+.two-fifths {
+  width: 40%;
+}
+
+.quarter {
+  width: 25%;
+}
+
+.third {
+  width: 33%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.border-bottom {
+  border-bottom: 1px solid black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.personal-space-top {
+  padding-top: 24px;
+}
+
+.personal-space-bottom {
+  padding-bottom: 24px;
+}
+
+.personal-space-left {
+  padding-left: 24px;
+}
+
+.personal-space-right {
+  padding-right: 24px;
+}
+
+.personal-space-top-double {
+  padding-top: 48px;
+}
+
+.personal-space-bottom-double {
+  padding-bottom: 48px;
+}
+
+.personal-space-left-double {
+  padding-left: 48px;
+}
+
+.personal-space-right-double {
+  padding-right: 48px;
+}
+
+@media only screen and (max-width: 640px) {
+  .break-to-full {
+    width: 100%;
+  }
+}
